@@ -1,21 +1,42 @@
 ---
-title: "Developing Data Products"
+title: "Week3 mini-project"
 author: "Leandro Meili"
-date: "1/28/2017"
-output:
-  html_document: default
-  pdf_document: default
+date: "1/29/2017"
+output: ioslides_presentation
 ---
-## Masp Museum in Sao Paulo
-```{r,echo = FALSE, message=FALSE}
-library(leaflet)
 
-  site <- '<a href="http://masp.art.br/">Masp Museum</a>'
-  map <- data.frame(lat=-23.5615178, 
-                    lng=-46.6581976)
-  
-map %>%
-    leaflet() %>%
-    addTiles() %>%
-    addMarkers(popup=site)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
 ```
+
+## R Code
+Simple histogram data from the Galton paren, child dataset
+```{r, echo=TRUE,message=FALSE}
+library(plotly)
+library(ggplot2)
+library(HistData)
+data("Galton")
+##set.seed(66)
+##plot_ly(Galton,x=~parent,type="histogram")
+```
+
+## The Galton Parent Histogram
+```{r, echo=FALSE,message=FALSE}
+set.seed(66)
+plot_ly(Galton,x=~parent,type="histogram")
+```
+
+## The mtcars plotly graph
+
+```{r, echo=FALSE,message=FALSE}
+library(HistData)
+set.seed(33)
+plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter", 
+        color = ~factor(cyl), size = ~hp,
+        text = ~paste("Cyl: ", cyl, "<br>hp:", hp)
+        )
+```
+
+## The End
+
+That's all folks
