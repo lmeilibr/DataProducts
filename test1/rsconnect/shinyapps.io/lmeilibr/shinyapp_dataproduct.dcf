@@ -1,0 +1,10 @@
+name: shinyapp_dataproduct
+title: shinyApp_DataProduct
+account: lmeilibr
+server: shinyapps.io
+appId: 154979
+bundleId: 700985
+url: https://lmeilibr.shinyapps.io/shinyapp_dataproduct/
+when: 1486263144.30583
+asMultiple: FALSE
+asStatic: FALSE
